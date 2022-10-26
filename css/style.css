@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Lora:wght@400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 59.37em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  background-color: #181719;
+}
+
+.container {
+  max-width: 144rem;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.signature {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #b9bdcf;
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+.signature__name {
+  font-weight: 500;
+  border-bottom: 1px solid currentColor;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4.2rem;
+  z-index: 50;
+}
+.nav__logo {
+  font-family: "Crimson Pro", serif;
+  font-size: 1.4rem;
+  padding: 0.8rem;
+  border: 1px solid #fff;
+}
+.nav__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8.6rem;
+}
+.nav__link:link, .nav__link:visited {
+  text-decoration: none;
+  color: currentColor;
+  font-size: 1.8rem;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.2s;
+}
+.nav__link:link::after, .nav__link:visited::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: all 0.2s;
+}
+.nav__link:link:hover::after, .nav__link:visited:hover::after {
+  width: 100%;
+}
+@media only screen and (max-width: 46.87em) {
+  .nav {
+    margin-top: 2.4rem;
+  }
+  .nav__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 3.2rem;
+  }
+  .nav__link {
+    font-size: 2.4rem;
+  }
+  .nav .navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(24, 23, 25, 0.97);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s;
+  }
+  .nav .navigation--open {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.menu {
+  display: none;
+  cursor: pointer;
+  z-index: 100;
+  position: relative;
+  transition: all 0.2s;
+}
+.menu__btn, .menu::before, .menu::after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+}
+.menu::before, .menu::after {
+  position: absolute;
+  transition: all 0.2s;
+}
+.menu::before {
+  right: 0;
+  top: -5px;
+}
+.menu::after {
+  left: 0;
+  bottom: -7px;
+}
+.menu--active .menu__btn {
+  opacity: 0;
+}
+.menu--active::before {
+  transform: translateY(10px) rotate(-45deg);
+}
+.menu--active::after {
+  transform: translateY(-9px) rotate(45deg);
+}
+@media only screen and (max-width: 46.87em) {
+  .menu {
+    display: block;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+}
+.content__visual {
+  position: relative;
+}
+.content__img {
+  width: 100%;
+}
+.content__text {
+  font-size: 2.4rem;
+  line-height: 1.4;
+  width: 80%;
+  margin-bottom: 4.8rem;
+}
+@media only screen and (max-width: 46.87em) {
+  .content {
+    grid-template-columns: 1fr;
+    row-gap: 3.6rem;
+  }
+  .content__visual {
+    margin-bottom: 7.2rem;
+  }
+  .content__text {
+    font-size: 1.4rem;
+    margin-bottom: 2.4rem;
+  }
+}
+
+.tweet {
+  background-color: #181719;
+  width: 60%;
+  padding: 1.8rem 2.8rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  bottom: 0;
+  right: 1.8rem;
+  transform: translateY(50%);
+}
+.tweet__data {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: repeat(2, min-content);
+  column-gap: 1.8rem;
+  row-gap: 0.8rem;
+  margin-bottom: 2.4rem;
+}
+.tweet__img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  grid-row: 1/span 2;
+  border-radius: 50%;
+  display: inline-block;
+}
+.tweet__name {
+  font-size: 1.4rem;
+  align-self: end;
+}
+.tweet__job {
+  font-size: 1.2rem;
+  color: #828282;
+}
+.tweet__text {
+  font-family: "Lora", serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+@media only screen and (max-width: 46.87em) {
+  .tweet {
+    width: 85%;
+  }
+  .tweet__img {
+    width: 4rem;
+    height: 4rem;
+  }
+  .tweet__name {
+    font-size: 1.2rem;
+  }
+  .tweet__job {
+    font-size: 1rem;
+  }
+  .tweet__text {
+    font-size: 1.8rem;
+  }
+}
+
+.main__heading {
+  font-family: "Lora", serif;
+  font-size: 4.8rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  margin-bottom: 3.2rem;
+}
+@media only screen and (max-width: 46.87em) {
+  .main__heading {
+    font-size: 3.6rem;
+    margin-bottom: 1.8rem;
+  }
+}
+
+.btn:link,
+.btn:visited {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  display: inline-flex;
+  gap: 1rem;
+  align-items: baseline;
+  transition: all 0.2s;
+}
+.btn:link span,
+.btn:visited span {
+  font-size: 2.2rem;
+}
+.btn:link::after,
+.btn:visited::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: all 0.2s;
+}
+.btn:link:hover,
+.btn:visited:hover {
+  gap: 1.4rem;
+}
+.btn:link:hover::after,
+.btn:visited:hover::after {
+  width: 100%;
+}
+@media only screen and (max-width: 46.87em) {
+  .btn:link,
+.btn:visited {
+    font-size: 1.4rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

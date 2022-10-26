@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/devchallenges.png" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://devchallenges.io/" />
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>interior consultant</title>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="nav">
+      <div class="nav__logo">This Interior</div>
+      <div class="menu">
+        <span class="menu__btn"></span>
+      </div>
+      <div class="navigation">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Collection</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="content">
+      <div class="content__descriptive">
+        <h1 class="main__heading">Modern interior</h1>
+        <p class="content__text">A full-Service residential & commercial interior design and staging company offering
+          professional organizing
+          & eco-services.</p>
+        <a href="#" class="btn">Read more <span> &rarr;</span></a>
+      </div>
+      <div class="content__visual">
+        <picture class="content__img" class="content__img">
+          <source srcset="img/photo1.webp" type="webp">
+          <source srcset="img/photo1.jpg" type="jpg">
+          <img src="img/photo1.jpg" alt="interior photo" class="content__img">
+        </picture>
+        <div class="tweet">
+          <div class="tweet__data">
+            <img src="img/photo2.png" alt="photo" class="tweet__img">
+            <p class="tweet__name">Aliza Webber</p>
+            <p class="tweet__job">Interior designer</p>
+          </div>
+          <div class="tweet__text">Designed in 2022 by<br>Aliza Webber</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="signature">created by <span class="signature__name">MoEzzat</span> - devChallenges.io</p>
+  </div>
+
+  <script>
+    const menu = document.querySelector(".menu");
+    const nav = document.querySelector(".navigation");
+
+    menu.addEventListener("click", () => {
+      console.log("clicked");
+      menu.classList.toggle("menu--active")
+      nav.classList.toggle("navigation--open")
+    })
+
+  </script>
+</body>
+
+</html>

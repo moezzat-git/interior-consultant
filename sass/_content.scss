@@ -1,0 +1,159 @@
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+
+  &__visual {
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  // &__descriptive {
+  //   margin-bottom: ;
+  // }
+
+  &__text {
+    font-size: 2.4rem;
+    line-height: 1.4;
+    width: 80%;
+
+    margin-bottom: 4.8rem;
+  }
+
+  @media only screen and (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    row-gap: 3.6rem;
+
+    &__visual {
+      margin-bottom: 7.2rem;
+    }
+
+    &__text {
+      font-size: 1.4rem;
+      margin-bottom: 2.4rem;
+    }
+  }
+}
+
+.tweet {
+  background-color: #181719;
+  width: 60%;
+  padding: 1.8rem 2.8rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  position: absolute;
+  bottom: 0;
+  right: 1.8rem;
+  transform: translateY(50%);
+
+  &__data {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: repeat(2, min-content);
+    column-gap: 1.8rem;
+    row-gap: 0.8rem;
+    margin-bottom: 2.4rem;
+  }
+
+  &__img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    grid-row: 1 / span 2;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  &__name {
+    font-size: 1.4rem;
+    align-self: end;
+  }
+  &__job {
+    font-size: 1.2rem;
+    color: #828282;
+  }
+
+  &__text {
+    font-family: $font-lora;
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  @media only screen and (max-width: $bp-md) {
+    width: 85%;
+
+    &__img {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &__name {
+      font-size: 1.2rem;
+    }
+    &__job {
+      font-size: 1rem;
+    }
+    &__text {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.main__heading {
+  font-family: $font-lora;
+  font-size: 4.8rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  margin-bottom: 3.2rem;
+
+  @media only screen and (max-width: $bp-md) {
+    font-size: 3.6rem;
+    margin-bottom: 1.8rem;
+  }
+}
+
+.btn:link,
+.btn:visited {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+
+  display: inline-flex;
+  gap: 1rem;
+  align-items: baseline;
+
+  transition: all 0.2s;
+
+  span {
+    font-size: 2.2rem;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+    gap: 1.4rem;
+  }
+
+  @media only screen and (max-width: $bp-md) {
+    font-size: 1.4rem;
+  }
+}
